@@ -1,0 +1,55 @@
+1. What is a PreparedStatement in JDBC?
+
+* PreparedStatement is an interface in java.sql package.
+* It is a sub-interface of Statement.
+* Used to execute parameterized and dynamic SQL queries.
+
+2. How do you create a PreparedStatement object?
+
+* Using the prepareStatement() method of a Connection object.
+* Example:
+
+  * Connection con = DriverManager.getConnection(URL, username, password);
+  * PreparedStatement pstm = con.prepareStatement("INSERT INTO student VALUES(?,?,?,?)");
+
+3. Why do we use PreparedStatement instead of Statement?
+
+* To execute dynamic SQL queries with parameters.
+* To prevent SQL injection.
+* To improve performance because SQL queries are precompiled.
+
+4. What is the role of the '?' (question mark) in PreparedStatement?
+
+* Acts as a placeholder for parameters in the SQL query.
+* Values are set using setter methods like setInt(), setString(), etc.
+
+5. How do you execute queries using PreparedStatement?
+
+* Use executeQuery() for SELECT statements (returns ResultSet).
+* Use executeUpdate() or execute() for INSERT, UPDATE, DELETE statements.
+
+6. What are the advantages of PreparedStatement over Statement?
+
+* Can accept parameters at runtime.
+* Faster for repeated queries as the SQL is precompiled.
+* Prevents SQL injection attacks.
+* Can be reused multiple times with different parameter values.
+
+7. What exceptions can occur while creating or executing a PreparedStatement?
+
+* SQLException is thrown if connection fails or SQL is invalid.
+* Other runtime exceptions may occur if incorrect parameter values are passed.
+
+8. Explain how PreparedStatement improves performance.
+
+* SQL query is precompiled and stored in the database.
+* For repeated execution, the database does not need to parse or compile the query again.
+* Reduces overhead compared to Statement in bulk operations.
+
+9. How does PreparedStatement prevent SQL injection?
+* User input values are passed as parameters, not concatenated into the SQL string.
+* The database treats these values as data, not part of the SQL command.
+
+10. Can the same PreparedStatement object be used for multiple operations?
+* Yes, the same PreparedStatement can be reused with different parameter values.
+* Useful for batch inserts or updates, reducing the need to create new objects repeatedly.
