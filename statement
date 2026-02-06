@@ -1,0 +1,54 @@
+1. What is a Statement in JDBC?
+* Statement is an interface used to execute static SQL queries like SELECT, INSERT, UPDATE, DELETE.
+* Represents a SQL statement sent to the database for execution.
+* Returns results as a ResultSet for SELECT queries or an update count for DML statements.
+
+2. In which package is the Statement interface present?
+* Statement interface is present in the java.sql package.
+* java.sql contains all core JDBC classes and interfaces for database interaction.
+
+3. How do you create a Statement object in JDBC?
+* Use the createStatement() method of a Connection object.
+* Example:
+  * Connection con = DriverManager.getConnection(url, user, pass);
+  * Statement stmt = con.createStatement();
+4. What kind of SQL queries can be executed using Statement?
+* DML queries: INSERT, UPDATE, DELETE
+* DDL queries: CREATE, ALTER, DROP
+* SELECT queries that return a ResultSet
+* Mostly used for static SQL queries without parameters.
+
+
+5. What are the limitations of using Statement in JDBC?
+* Cannot safely handle dynamic parameters; prone to SQL injection.
+* Every query must be hardcoded or concatenated as a string; error-prone.
+* Not optimized for repeated execution of similar queries.
+* Poor performance for bulk inserts or updates.
+
+
+6. Why is Statement suitable only for static SQL queries?
+* Statement executes SQL as a raw string.
+* Does not support parameter placeholders like PreparedStatement.
+* Queries must be fully written beforehand, suitable only for static SQL.
+
+7. How does Statement execute an SQL query internally?
+* SQL string is sent to the database engine.
+* Database parses, compiles, and optimizes the query.
+* Query is executed.
+* Result is returned as a ResultSet (for SELECT) or update count (for DML).
+* Process repeats every time the statement is executed, making it less efficient for repeated queries.
+
+
+8. What problems can occur when using Statement for bulk insert or update operations?
+
+* Performance issues due to repeated parsing and compilation by the database.
+* High network overhead because each query is sent separately.
+* SQL injection risk if dynamic values are concatenated.
+* Increased memory usage if large ResultSet objects are created unnecessarily.
+
+9. In a real-time application, when would you prefer using Statement?
+* Executing static, one-time queries like DDL commands or administrative scripts.
+* When parameterization or repeated execution is not needed.
+* Quick ad-hoc queries are sufficient and performance/security is not critical.
+
+
