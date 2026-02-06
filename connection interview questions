@@ -1,0 +1,92 @@
+1. What is a Connection in JDBC ?
+* Connection is an interface in JDBC.
+* It is present in the java.sql package.
+* It represents a connection between a Java application and a database.
+* A Connection object is obtained by calling the getConnection() method.
+* The getConnection() method is provided by DriverManager.
+* A Connection is created only when URL, username, and password are correct.
+The method throws SQLException.
+
+
+2. What are the JDBC API components?
+The JDBC API provides the following interfaces and classes:
+* DriverManager(I)
+* Driver(C)
+* Connection(I)
+*Statement (I)
+*resultSet(I)
+DriverManager
+* DriverManager is a helper class.
+* Manages a list of database drivers.
+* Matches connection requests from Java applications with the appropriate driver.
+* Uses JDBC subprotocol to identify the correct driver.
+* Establishes database connections.
+
+Driver
+* Handles communication with the database server.
+* Developers rarely interact directly with Driver objects.
+* Managed internally by DriverManager.
+* Hides database driver implementation details.
+
+Connection
+* Provides methods to connect to a database.
+* Represents the communication context.
+* All database communication happens through this object.
+
+Statement
+* Used to submit SQL statements to the database.
+* Executes SQL queries.
+Derived interfaces support parameters and stored procedures.
+
+ResultSet
+* Stores data retrieved after executing SQL queries.
+* Acts as an iterator to traverse result data.
+
+SQLException
+* Handles errors that occur in database applications.
+* Provides details about database access errors.
+
+
+3. What is the role of DriverManager in establishing a database connection?
+* DriverManager is responsible for establishing a connection to the database.
+* It uses the getConnection() method.
+* It loads the appropriate JDBC driver.
+* It returns a Connection object to the Java application.
+
+4. Explain the different getConnection() methods available in JDBC.
+* getConnection(String url, String username, String password)
+  Used when URL, username, and password are provided separately.
+* getConnection(String url, Properties properties)
+  Used when connection details are stored in a properties file.
+
+* getConnection(String url)
+  Used when username and password are included in the URL.
+
+
+5. What is a JDBC Connection URL? Why is it required?
+
+* A JDBC Connection URL tells Java which database to connect to.
+* It contains database type, host, port, and database name.
+* Without a connection URL, JDBC cannot locate the database.
+
+
+
+6. Write the general syntax of a JDBC connection URL.
+
+* jdbc:subprotocol://host:port/databaseName
+
+
+7. Explain the components of a JDBC URL.
+
+* Jdbc     Indicates JDBC protocol.
+* Subprotocol Specifies database type such as mysql or postgresql.
+* Host Specifies database server address.
+* port Specifies database port number.
+* databaseName Specifies the database to connect.
+
+
+8. What are the common reasons for JDBC connection failure?
+* Wrong URL, username, or password.
+* Database server not running.
+* JDBC Driver missing from classpath.
+* Network connectivity issues.
