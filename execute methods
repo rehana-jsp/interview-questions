@@ -1,0 +1,46 @@
+1. What is the purpose of executeQuery() method?
+
+* Used to execute SELECT SQL queries.
+* Returns a ResultSet object containing the retrieved data.
+
+2. When do you use executeUpdate() method?
+
+* Used to execute non-SELECT queries such as INSERT, UPDATE, and DELETE.
+* Returns an integer representing the number of rows affected.
+
+3. What is the use of execute() method in JDBC?
+
+* Used to execute both SELECT and non-SELECT queries.
+* Returns true if the result is a ResultSet, otherwise returns false.
+
+4. What is the return type of executeQuery()?
+
+* Returns a ResultSet object.
+
+5. What is the return type of executeUpdate()?
+
+* Returns an int value representing the update count.
+
+6. What is the return type of execute()?
+
+* Returns a boolean value.
+
+7. Can executeQuery() be used for INSERT or UPDATE statements?
+
+* No.
+* It is strictly used for SELECT queries.
+
+8. How do you retrieve ResultSet when using execute()?
+
+* Check if execute() returns true.
+* Call getResultSet() to retrieve the ResultSet.
+
+9. How do you retrieve update count when using execute()?
+
+* If execute() returns false, call getUpdateCount().
+* It returns the number of rows affected.
+
+10. Which execute method is best suited for dynamic SQL execution and why?
+
+* execute() is best suited.
+* It can handle both SELECT and non-SELECT queries when the query type is not known at runtime.
