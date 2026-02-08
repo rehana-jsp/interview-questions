@@ -1,0 +1,51 @@
+1. What is ResultSet in JDBC?
+* ResultSet is an interface present in the java.sql package.
+* It represents the data returned from a SELECT query.
+* It allows reading data row by row from the database.
+
+2. How do you obtain a ResultSet object?
+* By calling executeQuery() on Statement or PreparedStatement.
+* It can also be obtained using getResultSet() after executing a query.
+
+3. What is a cursor in ResultSet?
+* Cursor is a pointer that points to the current row in the ResultSet.
+* Initially, it is positioned before the first row.
+* Cursor movement methods are used to navigate records.
+
+4. What is the purpose of the next() method in ResultSet?
+* Moves the cursor forward by one row.
+* Returns true if the next row exists.
+* Returns false when no more rows are available.
+
+
+5. What are the different types of ResultSet in JDBC?
+* TYPE_FORWARD_ONLY: Cursor moves only forward.
+* TYPE_SCROLL_INSENSITIVE: Cursor moves forward and backward; not sensitive to database changes.
+* TYPE_SCROLL_SENSITIVE: Cursor moves forward and backward; sensitive to database changes.
+
+6. How do you retrieve data from ResultSet?
+* By using getXxx() methods such as getString(), getInt(), getDate(), etc.
+* Column values can be retrieved using column index or column name.
+* The get method should match the column data type.
+
+7. What navigation methods are available in ResultSet?
+* next(), previous()
+* first(), last()
+* beforeFirst(), afterLast()
+* absolute(int row), relative(int rows)
+
+8. What happens if ResultSet.next() returns false?
+* It indicates that there are no more rows in the ResultSet.
+* Cursor moves after the last row.
+* No data can be accessed after this point.
+
+
+9. What happens if you try to read data from ResultSet without calling next()?
+* The cursor remains before the first row.
+* Accessing data without moving the cursor throws SQLException.
+* next() must be called before accessing any column values.
+
+10. What is the default type and concurrency of a ResultSet?
+* Default type is TYPE_FORWARD_ONLY.
+* Default concurrency is CONCUR_READ_ONLY.
+* This means the cursor can move only forward and data cannot be updated.
