@@ -1,0 +1,67 @@
+1. What are the main steps involved in JDBC programming?
+
+* Load or register the JDBC driver.
+* Establish a database connection.
+* Create a Statement or PreparedStatement.
+* Execute SQL queries.
+* Close all JDBC resources.
+
+
+2. Why is it important to close a JDBC connection?
+
+* To avoid connection memory leakage.
+* To release database resources like cursors and handles.
+* To improve application performance and scalability.
+
+
+3. What happens if a JDBC connection is not closed?
+
+* Database connections remain open.
+* Memory and database resources are wasted.
+* Application may eventually run out of available connections.
+
+
+4. What is connection memory leakage in JDBC?
+
+* It occurs when database connections are not properly closed.
+* Unreleased connections consume memory and database resources.
+
+
+5. Which JDBC resources should be closed first?
+
+* ResultSet should be closed first.
+* Statement or PreparedStatement should be closed next.
+* Connection should be closed last.
+
+
+6. How do you safely close JDBC connections in Java?
+
+* By closing resources in a finally block.
+* Ensuring resources are closed even if an exception occurs.
+
+
+7. What is try-with-resources in JDBC?
+
+* A Java feature introduced in Java 7.
+* Automatically closes JDBC resources at the end of the try block.
+* Reduces the risk of resource leaks.
+
+
+8. Why is try-with-resources preferred over finally block?
+
+* It automatically manages resource closing.
+* Code becomes cleaner and less error-prone.
+* Prevents forgetting to close connections.
+
+
+9. What database resources are released when a connection is closed?
+
+* Database cursors.
+* Network connections.
+* Memory and internal database handles.
+
+
+10. What is the correct order of closing JDBC resources and why?
+
+* ResultSet → Statement → Connection.
+* Ensures dependent resources are released safely.
