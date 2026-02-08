@@ -1,0 +1,65 @@
+1. What is metadata in the context of databases?
+* Metadata summarizes basic information about data.
+* It makes finding and working with specific data easier.
+* It describes the structure rather than the actual data.
+
+
+2. What is DatabaseMetaData in JDBC?
+* DatabaseMetaData is an interface in JDBC.
+* It provides comprehensive information about the database.
+* It contains methods to retrieve database-level details.
+
+
+3. What kind of information can be obtained using DatabaseMetaData?
+* Table-related information such as tables, columns, and primary keys.
+* User and schema information.
+* Database product and driver details.
+* Supported database features.
+
+
+4. Which DatabaseMetaData methods are used to get table information?
+* getTables()
+* getColumns()
+* getPrimaryKeys()
+
+
+5. Which DatabaseMetaData methods are used to get user and schema details?
+* getUserName()
+* getSchemas()
+
+
+6. Which methods provide database-level information in DatabaseMetaData?
+* getDatabaseProductName()
+* getDatabaseProductVersion()
+* getDriverName()
+* getDriverVersion()
+
+
+7. Which DatabaseMetaData methods check supported database features?
+* supportsFullOuterJoins()
+* supportsStoredProcedures()
+* supportsTransactions()
+* supportsBatchUpdates()
+
+
+8. What is ResultSetMetaData in JDBC?
+* ResultSetMetaData is an interface that provides metadata about a ResultSet.
+* It describes the columns returned by a SELECT query.
+* It is used to get information about the structure of query results.
+
+9. What information can be obtained using ResultSetMetaData methods?
+* Number of columns in the ResultSet.
+* Column names and labels.
+* Column data types.
+* Table and schema names.
+
+
+
+10. List some commonly used ResultSetMetaData methods.
+
+* getColumnCount()
+* getColumnLabel()
+* getColumnName()
+* getColumnTypeName()
+* getTableName()
+* getSchemaName()
