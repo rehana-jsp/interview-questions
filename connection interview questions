@@ -56,9 +56,6 @@ SQLException
 4. Explain the different getConnection() methods available in JDBC.
 * getConnection(String url, String username, String password)
   Used when URL, username, and password are provided separately.
-* getConnection(String url, Properties properties)
-  Used when connection details are stored in a properties file.
-
 * getConnection(String url)
   Used when username and password are included in the URL.
 
@@ -78,7 +75,7 @@ SQLException
 
 7. Explain the components of a JDBC URL.
 
-* Jdbc     Indicates JDBC protocol.
+* Jdbc Indicates JDBC protocol.
 * Subprotocol Specifies database type such as mysql or postgresql.
 * Host Specifies database server address.
 * port Specifies database port number.
