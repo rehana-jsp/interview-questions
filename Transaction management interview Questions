@@ -1,0 +1,71 @@
+1. What is a transaction in JDBC?
+
+* A transaction is a group of one or more SQL operations treated as a single logical unit of work.
+* All operations in a transaction are either committed together or rolled back together.
+
+---
+
+2. Why are transactions important in database applications?
+
+* Transactions ensure data integrity and consistency.
+* They handle concurrent access and prevent partial updates during failures.
+
+---
+
+3. What are the ACID properties of a transaction?
+
+* Atomicity, Consistency, Isolation, and Durability.
+* These properties ensure reliable transaction processing.
+
+---
+
+4. What is auto-commit mode in JDBC?
+
+* Auto-commit is the default mode in JDBC.
+* Each SQL statement is treated as a separate transaction and committed automatically.
+
+---
+
+5. How do you disable auto-commit mode in JDBC?
+
+* By calling setAutoCommit(false) on the Connection object.
+* This allows manual control over transactions.
+
+---
+
+6. How do you commit a transaction in JDBC?
+
+* By calling the commit() method on the Connection object.
+* It makes all changes permanent.
+
+---
+
+7. How do you roll back a transaction in JDBC?
+
+* By calling rollback() on the Connection object.
+* It undoes all operations performed in the transaction.
+
+---
+
+8. What is a savepoint in JDBC?
+
+* A savepoint is an intermediate point within a transaction.
+* It allows partial rollback instead of rolling back the entire transaction.
+
+---
+
+9. How do you roll back to a savepoint?
+
+* By calling rollback(savepoint) on the Connection object.
+* It reverts the transaction to the specified savepoint.
+
+---
+
+10. What are some best practices for transaction management in JDBC?
+
+* Group related operations into a single transaction.
+* Avoid long-running transactions.
+* Always handle exceptions and roll back on errors.
+* Use savepoints carefully.
+* Ensure the database remains in a consistent state.
+
